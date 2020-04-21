@@ -1,0 +1,21 @@
+Software Engineering Logbook
+
+Entry 1 - 1/20/2020-1/24/2020
+
+We had our first assignments for SSW215 and I made a quick HTML webpage. It took me like 3-4hrs maybe becuase it took me a bit to figure out how I wanted to format it, but the coding took only like 3hrs. Wrote a total of 42 lines of HTML with minimal CSS styling. Didn't get a chance to do any IOS dev or swift this week because it was so chaotic, but figured out a system for Stache Solutions.
+
+Entry 2 1/25/2020-2/4/2020
+
+We integrated CSS into our HTML webpages. I originally used the Bulma.io library as it makes its easier to format CSS with, but made the decision to just make the CSS myself. I did it because I wasn't sure if using Bulma is accepted. Spent a good amount of time learning the Bulma library and formatting my website. When I actually coded the CSS it took me about 2hrs. Wrote 92 lines of CSS and 64 lines of HTML. Coded user-authentication with google firebase for a messaging app I am working on, some python for CS115, and scheme for CS135.
+
+Entry 3 2/5/2020-2/13/2020
+
+We had an assignment to work with fundamental method, arrays, and object in Javascript. It was actually a really fun exercise because I haven't done Javascript in a while. It took me a bit to realise on the console in the google dev tools worked. I am also continuing to work on mobile app dev with swift.
+
+Entry 4 2/14/2020-2/20/2020
+
+We integrated Javascript into our webpage. I turned out to having a hard time adding javascript into my webpage because I couldn't figure out what kind of dynamic functionality I wanted to added. Ended up doing something mediocre to pass the assignment, a bit disappointed in myself. On the good side I started working with google firebase and integrating cocoa pods into swift apps. It is overall super easy and fun to work with google firebase. Also studied alot of python and recursion to prepare for the CS115 test.
+
+Entry 5 2/21/2020-2/27/2020
+
+

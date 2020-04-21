@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        
+        
+        <section class="hero">
+            <div class="inner-hero">
+                Hello! I am
+                <h1 id="demo">Find name in script.js</h1>
+                <h2>Software Developer | Entreprenuer</h2>
+                <button type="button" onclick="myFunction();">Reveal Who I Am</button>
+                <button type="button" onclick="redH1();">Make My Name Red</button>
+            </div>
+        </section>
+
+        <section>
+            <div class="about">
+                <h4>Jack of all trades, master of some</h4>
+                <div class="section-heading">
+                    <p>
+                        I am a driven computer science student seeking opportunities to learn about software in a modern fast-paced environment. I am particularly 
+                        interested in full-stack development. However, I am open to all opportunities to learn new software applications and sharpen my 
+                        current skills. I possess a uniquely entrepreneurial mindset that is constantly seeking opportunities to bring value to consumers through software 
+                        applications. My primary skills include: full-stack React.js-Ruby on Rails development and Python. My other auxiliary technical skills along 
+                        with my primary skills are complemented by my soft skills — I flourish in a dynamic team environment, when given the opportunity I am focused on 
+                        bringing value and pushing progress.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-columns">
+            <section class="section-text1">
+                <h1>Contact Me</h1>
+                <div>
+                    <p>Location: Hoboken, NJ</p>
+                    <p>Email: Mlin3@stevens.edu</p>
+                    <p>Mobile: (201)-417-2039</p>
+                </div> 
+            </section>
+            <section>
+                <img src="arrow.jpg">
+            </section>
+            <section class="section-text2">
+                <h1>Skills</h1>
+                <div>
+                    <p>iOS Mobile Application Development</p>
+                    <p>Ruby 5/React Full Stack Development</p>
+                    <p>Web Application Development</p>
+                </div> 
+            </section>
+        </section>
+
+        <section class="link-section">
+            <button onclick="window.location.href='https://www.linkedin.com/in/ming-lin-670758162/';">Linkedin</button>
+            <button onclick="window.location.href='https://www.stachesolutions.dev/';">Stache Solutions</button>
+            <button onclick="window.location.href='https://github.com/ming1in';">Github</button>
+        </section>
+        
+        <script>
+            function myFunction(){
+                document.getElementById("demo").textContent="Ming Lin";
+            }
+
+            var body = document.querySelector("body");
+            body.style.background = "lightgrey"   
+            
+            var about = document.getElementsByClassName("section-heading")[0];
+            about.style.background = "red"
+
+            function redH1() {
+                document.getElementsByTagName("h1")[0].style.background = "red"
+            }
+        </script>
+    </body>
+</html>

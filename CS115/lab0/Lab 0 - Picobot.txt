@@ -1,0 +1,42 @@
+Ming Lin
+I pledge my honor that I have abided by the Stevens Honor System
+
+
+Map 1
+
+0 *x** -> E 0 #if there is nothing to the E, go E
+0 xE** -> N 0 #if there is nothing to the N and E is blocked, go N
+0 NE** -> X 1 #if N and E is blocked, move to state 1
+
+1 ***x -> S 1 #if there is nothing to the S, go S
+1 ***S -> W 2 #if S is blocked, go W and move to state 2
+
+2 x*** -> N 2 #if there is nothing to the N, go N
+2 N*** -> W 1 #if N is blocked, go W, move to state 1
+
+
+Map 2
+
+#North
+0 xE** -> N 0 #if there is nothing to the N and E is blocked, go N and stay in state 0
+0 *x** -> E 1 #if there is nothing to the E, go E and move to state 1
+0 NEx* -> W 3 #if there is nothing to the W and E/N is blocked, go W and move to state 2
+0 NEWx -> S 2 #if there is nothing to the S and N/E/W is blocked, go S and move to state 3
+
+#East
+1 *x*S -> E 1 #if there is nothing to the E and S is blocked, go E and stay in state 1
+1 ***x -> S 2 #if there is nothing to the S, go S and move to state 3
+1 xE*S -> N 0 #if there is nothing to the N and E/S is blocked, go N and move to state 0
+1 NExS -> W 3 #if there is nothing to the W and N/E/S is blocked, go W and move to state 2
+
+#West
+3 N*x* -> W 3 #if there is nothing to the W and N is blocked, go W and stay in state 3
+3 x*** -> N 0 #if there is nothing to the N, go N and move to state 0
+3 N*Wx -> S 2 #if there is nothing to the S and N/W is blocked, go S and move to state 2
+3 NxWS -> E 1 #if there is nothing to the E and N/W/S is blocked, go E and move to state 1
+
+#South
+2 **Wx -> S 2 #if there is nothing to the S and W is blocked, go S and stay in state 2
+2 **x* -> W 3 #if there is nothing to the W, go W and move to state 3
+2 *xWS -> E 1 #if there is nothing to the E and W/S is blocked, go E and move to state 1
+2 xEWS -> N 0 #if there is nothing to the N and E/W/S is blocked, go N and move to state 0
