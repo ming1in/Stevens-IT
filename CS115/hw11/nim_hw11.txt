@@ -1,0 +1,165 @@
+Write a Python program that plays "Nim" optimally.  The purpose of
+this assignment is to get practice with while and for loops.
+
+Nim is a very old game that is played between two players as follows.
+There are several piles of objects such as coins; the number of piles
+can vary from game to game.  Player 1 removes some coins from one
+pile; all removed coins must be from the same pile.  Then player 2
+removes some coins from some pile.  The players go back and forth this
+way until no coins remain.  The player who removes the last coin wins.
+Here is an example game of Nim played between a human user (player 1) 
+and a computer program like the one you will write:
+
+We're going to play Nim.  You'd better play optimally or I'll win.
+How many piles do you want to play with? 3
+How many in pile 0? 3
+How many in pile 1? 4
+How many in pile 2? 5
+pile  0  =  3
+pile  1  =  4
+pile  2  =  5
+Your turn ...
+Which pile? 2
+How many? 1
+pile  0  =  3
+pile  1  =  4
+pile  2  =  4
+My turn ... prepare to be dazzled!!!
+I remove 3 from pile 0
+pile  0  =  0
+pile  1  =  4
+pile  2  =  4
+Your turn ...
+Which pile? 1
+How many? 2
+pile  0  =  0
+pile  1  =  2
+pile  2  =  4
+My turn ... prepare to be dazzled!!!
+I remove 2 from pile 2
+pile  0  =  0
+pile  1  =  2
+pile  2  =  2
+Your turn ...
+Which pile? 1
+How many? 1
+pile  0  =  0
+pile  1  =  1
+pile  2  =  2
+My turn ... prepare to be dazzled!!!
+I remove 1 from pile 2
+pile  0  =  0
+pile  1  =  1
+pile  2  =  1
+Your turn ...
+Which pile? 2
+How many? 1
+pile  0  =  0
+pile  1  =  1
+pile  2  =  0
+My turn ... prepare to be dazzled!!!
+I remove 1 from pile 1
+pile  0  =  0
+pile  1  =  0
+pile  2  =  0
+I win ... AGAIN
+
+As you can see, the program has an obnoxious personality.  This is not
+a required part of the assignment.
+
+Nim is a simple game and the optimal playing strategy was discovered
+long ago.  Your program must play optimally.  Here's how to do that.
+Suppose there are three piles A, B, and C.  Step 1: compute the
+bitwise exclusive-or of A, B, and C.  Call this the "nim-sum" of the
+game.  Step 2: compute the bitwise exclusive-or of the nim-sum with
+each pile individually.  Call each of these the pile-sums.  Step 3: If
+some pile-sum is smaller than the number of coins in that pile, then
+the optimal play is to remove coins from that pile; remove as many
+coins as necessary to reduce the pile to its pile-sum.
+Here's an example.  Suppose A has 3 coins, B has 4 coins,
+and C has 5 coins.  In binary 3 is 011, 4 is 100, and 5 is 101 so the
+nim-sum is:
+
+   011
+   100
+   101
+   ---
+   010 = nim-sum of the game 
+
+(Check that 3 ^ 4 ^ 5 is 2.  Bitwise exclusive-or is written ^ in Python.)
+
+Next compute all the pile-sums:
+
+   A: 011 ^ 010 = 001
+   B: 100 ^ 010 = 110
+   C: 101 ^ 010 = 111
+
+Pile A has a pile-sum value (1) that is less than its number of coins
+(3).  Therefore, the optimal play is to remove coins from pile A.  The
+number of coins that should be removed is 3 - 1, i.e., 2.
+
+It is possible that NO pile will have a pile-sum that is less than its
+number of coins.  Optimal play in Nim is always to make the nim-sum be
+zero following your move.  If the nim-sum is zero BEFORE your move
+that means the user's last move was optimal.  In this case you cannot
+also move optimally.  You'll have to make any random legal move then
+hope the user doesn't keep playing optimally.  Since the user moves
+first, if the user makes every play optimally then the user will win
+and there is nothing the program can do about it.
+
+Here is how your program should run the game:
+- ask the user how many piles he/she wants
+- then ask how many coins in each pile
+- the user goes first
+- after each move, user's or computer's, display the number of coins
+  in each pile
+- you may assume that the user will always give integer input, but the
+  integer value may be zero or negative when it should be positive, or
+  the value may be too large; if the value is bad the program must
+  detect that and re-prompt until the user provides a good value
+- the program should play each of its moves optimally
+
+Besides, "while" and "for", here are some hints and some required 
+restrictions on your code:
+
+
+0. Use the provided template, which uses global variables.  The variable
+'piles' should be a list holding the current pile sizes.
+
+1. Don't modify the functions specified in the template; we need those for
+grading.  Organize your code with additional functions.  Each function should 
+accomplish a single small clearly defined purpose.  As usual, you must provide 
+a succinct, accurate docstring for each function that explains what it does.
+
+2. You must use at least one while loop and at least one for loop in
+this program.
+
+3. You can get an integer input from the user like this:
+        num = int(input(prompt))
+For example:
+        num_piles = int(input("How many piles do you want to play with? "))
+
+4. Compute bitwise exclusive-or with the "caret" operator (^, the
+character above the 6 key on your keyboard).  For example, if nim_sum
+is 2 and pile[i] is 3 then
+
+        nim_sum ^ pile[i]
+
+is 1.
+
+5. Python allows assignment to a list element (such as L[2] = 4) only
+if the list element already exists.  If L doesn't have any elements or
+if it has fewer than 3 elements, then "L[2] = 4" will cause an error.
+You can initialize a numeric list L to have N elements using code like
+this:
+
+   L = [ 0 ] * N
+
+6. "global" is a Python keyword.  Global variables are dangerous because
+an error updating a global variable in one function can spread bad
+data to other functions.  Therefore, standard programming practice is
+to use as few global variables as necessary.  Global variables are
+typically used when many functions need to access common data and the
+programmer feels it would be cumbersome to pass the common data as
+arguments to so many functions.
+
