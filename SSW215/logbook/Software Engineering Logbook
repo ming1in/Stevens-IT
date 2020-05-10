@@ -1,21 +1,123 @@
-Software Engineering Logbook
+Ming Lin - Software Engineering Logbook - SSW 215
 
 Entry 1 - 1/20/2020-1/24/2020
 
-We had our first assignments for SSW215 and I made a quick HTML webpage. It took me like 3-4hrs maybe becuase it took me a bit to figure out how I wanted to format it, but the coding took only like 3hrs. Wrote a total of 42 lines of HTML with minimal CSS styling. Didn't get a chance to do any IOS dev or swift this week because it was so chaotic, but figured out a system for Stache Solutions.
+We had our first assignments for SSW215 and I made a quick HTML webpage. It took me like 3-4hrs maybe because it took me a bit to figure out how I wanted to format it, but the coding took only like 3hrs. Wrote a total of 42 lines of HTML with minimal CSS styling. Didn't get a chance to do any IOS dev or swift this week because it was so chaotic, but figured out a system for Stache Solutions.
+
+
 
 Entry 2 1/25/2020-2/4/2020
 
 We integrated CSS into our HTML webpages. I originally used the Bulma.io library as it makes its easier to format CSS with, but made the decision to just make the CSS myself. I did it because I wasn't sure if using Bulma is accepted. Spent a good amount of time learning the Bulma library and formatting my website. When I actually coded the CSS it took me about 2hrs. Wrote 92 lines of CSS and 64 lines of HTML. Coded user-authentication with google firebase for a messaging app I am working on, some python for CS115, and scheme for CS135.
 
+
+
 Entry 3 2/5/2020-2/13/2020
 
 We had an assignment to work with fundamental method, arrays, and object in Javascript. It was actually a really fun exercise because I haven't done Javascript in a while. It took me a bit to realise on the console in the google dev tools worked. I am also continuing to work on mobile app dev with swift.
+
+
 
 Entry 4 2/14/2020-2/20/2020
 
 We integrated Javascript into our webpage. I turned out to having a hard time adding javascript into my webpage because I couldn't figure out what kind of dynamic functionality I wanted to added. Ended up doing something mediocre to pass the assignment, a bit disappointed in myself. On the good side I started working with google firebase and integrating cocoa pods into swift apps. It is overall super easy and fun to work with google firebase. Also studied alot of python and recursion to prepare for the CS115 test.
 
+
+
 Entry 5 2/21/2020-2/27/2020
 
+This week we ultimately decided on what our project is going to be. I did not really do any coding for SSW215. However, got to code a pascals triangle script in python for CS115. Took about a total of 12 lines and took a little less than an hours. As well as completed a scheme assignment for CS 135. Did not really have a chance to do much coding because of midterms.
+
+
+
+Entry 6 3/2/2020-3/8/2020
+
+This week I completed a scheme lab and coded a script for relations. As well as wrote a python script for creating trees and had a chance to mess with the turtle plug in. I wrote another python scrip for converting numbers to binary depending on the base. Took a total of 150 lines for both scripts. Also still learning swift through the udemy course I got. 
+
+
+
+Entry 7 3/9/2020-3/15/2020
+
+This week I was not really productive with coding and got caught up in other school work and studying for the SSW215 midterm. 
+
+I completed the following coding task:
+- Improved on the scheme script I wrote last week (281 lines| 2 hrs)
+
+
+
+Entry 8 3/16/2020- 3/22/2020
+
+Still getting use to this whole doing work from home thing and did not really code much. However I am starting to refresh my memory on Ruby and React for our project. 
+
+I completed the following coding task:
+- created a scheme script that performs number theory arithmetic (441 lines|3-4hrs)
+
+
+
+Entry 9 3/23/2020-3/29/2020
+
+I was overall really productive this week, however much of my time went to studying for my CS115 and CS135 midterms.
+
+I completed the following coding task:
+- created a python script that performs arithmetic on binary numbers (65 lines|1hrs)
+
+
+
+Entry 10 3/30/2020-4/5/2020
+
+I finished formulating a development plan for Jita. I also starting to reconsider making Jita a web app. I think I should build a mobile app because it is something I am more familiar with. I started doing some research into react native because I've been doing swift for so long I want to switch it up a bit. 
+
+I completed the following coding task:
+- created a python script that compresses and uncompresses binary strings using adaptive run length encoding (201 lines|2hrs)
+- worked on a python script created a visual representation of the Mandelbrot set (91 lines|2hrs)
+
+
+
+Entry 11 4/6/2020-4/12/2020
+
+I started developing and laying the groundwork for Jita. Its been going really smooth, but now I am starting to think about how to build each feature.
+
+I completed the following coding task:
+- created a python script to mess around and familiarise myself with a imperative development style(165 lines|1hr)
+- worked on a scheme script that represents hows the Chinese remainder theorem works (211lines|1hr)
+- created a python scripts that plays the game of life(151 lines|3hrs)
+
+
+
+Entry 12 4/13/2020-4/19/2020
+
+I attempted to build out the nimbot extra credit, but I could figure it out in time. I felt really unmotivated so I kinda gave up on it. But I though it was a really interesting problem. After working with Ruby on Rails for a little, things are starting to get hairy and annoying. I have official switch over to making Jita a mobile and building it with React Native. I have finished the UI designs on figma and built out the authentication flow. 
+
+I completed the following coding task:
+- created a pythons script to mess around with some insertion sorts and binary searches(275 lines|2hrs)
+- created a scheme script to that can encode and decode RSA encryptions(260 lines|3hrs)
+- create a python scrip that is suppose to recommended music based on how many likes an artist and song gets(254 lines| 5 hrs)
+
+
+
+Entry 13 4/20/2020-4/26/2020
+
+This week I worked to integrate firebase into Jita and now we are able to authenticate users and push their data up to firestore. I thought it was a cool idea to create a registration workflow, so I am working on that.
+
+I completed the following coding task:
+- created the GameOMatic assignment (145 lines|1.5hr)
+- created a python script that plays the game of nim in the most optimal way(177 lines|1 hr)
+- created a scheme script thats can analyse eulerian graphs (327 lines|3 hrs)
+
+
+
+Entry 14 4/27/2020-5/2/2020
+
+So in the beginning of the work, I made a mistake with GitHub and lost a few files because they did not get committed correctly. The code base is now a big mess because a some files were dependencies and were lost. I spent a-lot of time rebuild it and fixing everything. Everything works really smoothly now. I spent perhaps 15 hours this week working on Jita. I wanted to do more, but I was trying to balance things because I had to study for finals and exams.
+
+I completed the following coding task:
+- created a python script to mess with classes and object methods and properties(185 lines| 1hr)
+- created a python script to learn about inheritance(103 lines|.5 hr)
+- created a scheme script that can perform topological sorts (293 lines| 3hrs)
+
+
+
+Entry 15 5/3/2020-5/9/2020
+
+This week I strictly worked on finishing up the profile and home screen for jita. I got firebase working really smoothly now. I probably worked about 10 hours this week and wrote approximately 300 lines of good code. I am really happy with the way the development is going, but I think the UI needs some work. At the end of the week a majority of the app is now completed and I am quite happy with how the presentation and final product turned out. I wish I got a bit more feedback during the presentation, but what can you expect everyone is tired at the end of the semester. I am ultimately going to keep working on Jita throughout the summer and I think I can clean up a few things as well.
 
