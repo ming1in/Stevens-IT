@@ -13,7 +13,7 @@ public class MyList<E> {
 	// Methods
 
 	public E get(int index) {
-		if (index<0 || index>= free) {
+		if (index<0 || index>= free) { // if index doesn't exist
 			throw new IllegalArgumentException();
 		}
 		// index is in range!
@@ -32,8 +32,12 @@ public class MyList<E> {
 		l.add("hello");
 		l.add("hi");
 		l.add("howdy");
-				
-		System.out.println(l.get(2));
+    
+    try {
+		  System.out.println(l.get(2));
+    } catch (IllegalArgumentException e) {
+      System.out.println("oops index is out of bounds");
+    }
 		
 		MyList<Integer> l2 = new MyList<Integer>(10);
 		
