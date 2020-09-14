@@ -1,0 +1,91 @@
+* Use cases includes... * 
+- a scenario
+- a persona or other systems
+  - their intentions
+- a sequence of actions
+- a observable result
+
+* Use case methods *
+1) identify actors
+  - who uses the system?
+  - who get info from the system?
+  - who provides info to the system?
+  - who supports the system?
+  - what other systems interact with this system?
+2) identify the use cases
+  - what does a actor want to do with the system?
+3) identify actor/use case relationships in a use case diagram
+4) outline scenario
+  - describe sequence of events and alternate scenarios
+
+* Use case template *
+- name
+- brief description
+- actors
+- basic flow
+- alternate flows
+
+* User stories *
+- Customers communicate their needs via short statements
+- provide the user stories with help from developers
+- starts with 'as a user,...'
+
+* user story components *
+- title
+- acceptance test
+- priority
+- how many points
+- description, a short gist of the actual story
+
+* user story criteria *
+- they should be testable
+- should be small enough that several can be completed per iteration
+- customer write iteration
+
+* Use Cases vs User Stories *
+- structure 
+- perspective 
+
+* homework 2 notes *
+
+- parking spot finder
+  - use case
+    - a driver looking for a spot to park his car
+    - the driver wants the car to help him find a suitable parking spot
+    - sequence of events
+      - driver arrives within the vicinity of his destination
+      - driver is looking a place to safely park his car
+      - driver turns on parking spot finder 
+      - systems begins actively scanning its environment, looking for a space 
+        that could fit that could fit the car
+      - systems successfully finds a space 
+  - user story
+    - as a driver, I want my car to able to find a suitable parking spot on its own
+
+- 360 view camera and proximity screen
+  - use case
+    - a driver that is newer to this self parking technology, does not completely 
+      trust the system yet and would to closely monitor the car 
+    - driver get a visual display of the environment around the car and a visual
+      representing the proximity of the car to the nearest object
+    - sequence of events
+      - driver find a parking spot
+      - decides to use self parking 
+      - decides to make sure the car does crash itself
+      - turns on camera and proximity sensor and screen
+      - drivers observes the car until he decides to take over or car successfully
+        parks itself
+  - user story
+    - as a driver, I want to able to monitor the area around my car while it 
+      self parks to make sure it does come close to crashing into anything
+
+- error logging
+  - use case
+    - a developer team that want to monitor every instance the self-parking feature
+      fails
+    - a error handling systems that would report any pattern of errors or big errors 
+      to the developers
+    - a developer want to monitor 
+  - user story
+    - as a developer, I want to be able to monitor instances where the system fails
+      and improve the system accordingly
