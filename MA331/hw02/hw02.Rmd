@@ -1,0 +1,99 @@
+---
+title: "Homework 02"
+author: "Ming Lin"
+output: pdf_document
+output_file: "./MA331/hw02/homework02.pdf"
+---
+
+I pledge my honor that I have abided by the Stevens Honor System 
+  
+```{r echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+p <- 0.4
+n <- c(20, 30, 50, 75, 100)
+
+for (i in 1:length(n)) {
+  F[i] = pbinom(8.25, n[i], p)
+}
+
+
+```
+Problem 1(i)  
+  
+For, n = 20, P(N <= 8.5) = `r F[1]`  
+For, n = 30, P(N <= 8.5) = `r F[2]`  
+For, n = 50, P(N <= 8.5) = `r F[3]`  
+For, n = 75, P(N <= 8.5) = `r F[4]`  
+For, n = 100, P(N <= 8.5) = `r F[5]` 
+
+Problem 1(ii)  
+
+For, n = 20, P(N <= 8.5) = 0.6331  
+For, n = 30, P(N <= 8.5) = 0.0606      
+For, n = 50, P(N <= 8.5) = 0.00058  
+For, n = 75, P(N <= 8.5) = 1.475e^-7     
+For, n = 100, P(N <= 8.5) = 8.91e^-11   
+
+Problem 1(iii)  
+
+```{r echo=FALSE, out.width="50%", out.height= "50%", fig.align='left'}
+y <- c(0.0375013,0.03341122,0.0003494771,-0.00060031418,0.00013653601)
+plot(n,y)
+```  
+
+Problem 1(iv)  
+As the errors downtrend to nearly but not 0, the N increases.  
+
+Problem 2  
+
+```{r echo=FALSE}
+func <- function(n) {
+  x <- vector(mode = "numeric")
+  y <- vector(mode = "numeric")
+  for (i in 1:100) {
+    val <- rnorm(n, mean = 2, sd = 3)
+    meanx <- mean(val)
+    varx <- sd(val)^2
+    x[i] <- meanx - 2 / sqrt(9 / n)
+    y[i] <- ((n - 1) * varx) / (9)
+  }
+  plot(x, y, main="Scatter Plot")
+  plot(density(x), main = "Density[Y]")
+  plot(density(y), main = "Density[X]")
+}
+```
+
+```{r, out.width="30%"}
+print('N = 20')
+func(20)
+print("N = 30")
+func(30)
+print("N = 50")
+func(50)
+print("N = 75")
+func(75)
+```
+
+Problem 2(v)  
+
+After observing the plots, I notice that the values seem to peak
+in the middle and through sample size n that throughout each
+graph their slope and pattern are similar
+
+Problem 2(vi)  
+
+After observing the scatter plots, I noticed that the values are uniformly
+randomly distributed in the middle of the scatter plot. Also, the scatter plot
+shows minimal correlation and increasing density in the middle.
+
+Problem 3  
+
+![](/Users/minglin/Stevens-IT/MA331/hw02/prob3.pdf)
+
+Problem 4  
+
+![](/Users/minglin/Stevens-IT/MA331/hw02/prob4.pdf)
+

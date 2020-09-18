@@ -1,0 +1,128 @@
+---
+title: "Homework 01"
+author: "Ming Lin"
+output: pdf_document
+output_file: "./MA331/hw01/homework01.pdf"
+---
+I pledge my honor that I have abided by the Stevens Honor System 
+
+```{r echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+Problem 1(i)
+
+```{r fig.align='center'} 
+#define vectors
+x <- c(0.2, 1.2, 0.9, 2.2, 3.2, 0.3, 1.7, 3.1, 2.3, 1.5, 2.5, 3.0, 2.6, 9.0)
+y <- c(1.1, 2.3, 1.1, 3.6, 0.1, 1.0, 6.9, 4.8, 6.5, 7.8, 5.8, 8.0, 9.4, 9.9)
+
+# create table with vector, table with two columns x, y
+par(mfrow = c(1, 2)) #customize grid layout
+x.data <- data.frame(x)
+y.data <- data.frame(y)
+
+hist(x)
+hist(y)
+
+xPie <- x
+yPie <- y
+
+#groups x and y into numerical observations by intervals of 2
+xPie[x >= 0 & x < 2] = "[0,2)"
+xPie[x >= 2 & x < 4] <- "[2,4)"
+xPie[x >= 4 & x < 6] <- "[4,6)"
+xPie[x >= 6 & x < 8] <- "[6,8)"
+xPie[x >= 8 & x < 10] <- "[8,10)"
+
+yPie[y >= 0 & y < 2] <- "[0,2)"
+yPie[y >= 2 & y < 4] <- "[2,4)"
+yPie[y >= 4 & y < 6] <- "[4,6)"
+yPie[y >= 6 & y < 8] <- "[6,8)"
+yPie[y >= 8 & y < 10] <- "[8,10)"
+
+xPieTable <- table(xPie)
+yPieTable <- table(yPie)
+
+par(mfrow = c(1, 2))
+pie(xPieTable, main = "Pie Chart [X]")
+pie(yPieTable, main = "Pie Chart [Y]")
+```
+
+It seems that for the values within x pie chart ~50% of its values are 
+greater than 2 and less than 4. Whereas y pie chart all values are distributed
+evenly.
+
+Problem 1(ii)
+
+```{r echo=FALSE, out.width="50%", out.height= "50%", fig.align='center'}
+boxplot(x,main="Box-and-Whisker Plot[X]", horizontal = T)
+summary(x) # five number summary of x
+xVariance <- var(x) #variance of x
+xOutlier <- boxplot(x, plot = F)$out # outliers of x
+```
+Variance[X]:`r xVariance`
+Outlier[X]:`r xOutlier`
+
+
+```{r echo=FALSE, out.width="50%", out.height= "50%", fig.align='center'}
+boxplot(y, main = "Box-and-Whisker Plot[Y]", horizontal = T)
+summary(y) # five number summary of x
+yVariance <- var(y) # variance of x
+yOutlier <- boxplot(y, plot = F)$out # outliers of x
+```
+Variance[Y]: `r yVariance`
+Outlier[Y]: 0
+
+Problem 1(iii)
+
+```{r echo=FALSE, out.width="50%", out.height= "50%", fig.align='center'}
+plot(x ~ y, main = "Scatter Plot[X,Y]") # create scatter plot
+lm1 <- lm(x ~ y) #linear model
+abline(lm1) # line of best fit
+```
+
+Correlation Coefficient:
+```{r echo=FALSE}
+cor(x,y)
+```
+
+X and Y have a modern linear association because of their positive correlation coefficient
+
+Problem 1(iv)
+
+```{r echo=FALSE, out.width="50%", out.height= "50%", fig.align='center'}
+xNoOutlier <- c(0.2, 1.2, 0.9, 2.2, 3.2, 0.3, 1.7, 3.1, 2.3, 1.5, 2.5, 3.0, 2.6)
+yNoOutlier <- c(1.1, 2.3, 1.1, 3.6, 0.1, 1.0, 6.9, 4.8, 6.5, 7.8, 5.8, 8.0, 9.4)
+
+plot(xNoOutlier ~ yNoOutlier, main = "Scatter Plot") #create scatter plot
+lm2 <- lm(xNoOutlier ~ yNoOutlier) # generate linear model
+abline(lm2) # add line of best fit
+
+newCorrCoeff = cor(xNoOutlier, yNoOutlier)
+```
+
+Removed (9.0, 9.8) and changed the correlaton coefficient to `r newCorrCoeff`.
+
+Problem 1(v)
+
+The main difference observed between the numerical results in part 3 and 4 is that part 3
+had a positive relation, while part 4 had a weaker relation. This change is a result
+of removing the outlier in part 4.
+
+Problem 1(vi)
+
+```{r p1-vi, echo=FALSE,out.width="50%", out.height="50%"}
+qqnorm(x,main = "Normal QQ Plot [X]")
+qqline(x)
+qqnorm(y,main = "Normal QQ Plot [Y]")
+qqline(y)
+```
+
+After observing the both QQ plots, it seems that x is more likely to be of normal distribution.
+
+Problem 2
+
+![](/Users/minglin/Stevens-IT/MA331/hw01/Problem2.png)
+
+Using the proof above this proves the first part of problem 2 and 
+the second part becuase 1/n is a constant.

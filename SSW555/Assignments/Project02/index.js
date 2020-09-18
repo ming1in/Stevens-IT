@@ -4,7 +4,12 @@
 
 const fs = require('fs') 
 
-const tags = ['INDI', 'NAME', 'SEX', 'BIRT', 'DEAT', 'FAMC', 'FAMS', 'FAM', 'MARR', 'HUSB', 'WIFE', 'CHIL', 'DIV', 'DATE', 'HEAD', 'TRLR', 'NOTE']
+const tags = [
+  'INDI', 'NAME', 'SEX', 'BIRT', 'DEAT',
+  'FAMC', 'FAMS', 'FAM', 'MARR', 'HUSB',
+  'WIFE', 'CHIL', 'DIV', 'DATE', 'HEAD',
+  'TRLR', 'NOTE'
+]
 
 class Record{
   constructor(level, tag, arg, id) {

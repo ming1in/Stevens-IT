@@ -1,0 +1,117 @@
+---
+title: "Intermediate Stats Hw1--Timothy Stephens"
+author: "Timothy Stephens"
+date: "9/7/2020"
+output:
+  pdf_document:default
+output_file: "./MA331/hw01/homework01-tim.pdf"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Problem 1.
+
+(i)
+
+```{r p1-i x-dist, out.width="50%"}
+x = c(0.2, 1.2, 0.9, 2.2, 3.2, 0.3, 1.7, 3.1, 2.3, 1.5, 2.5, 3.0, 2.6, 9.0)
+hist(x, main = "Histogram [X]")
+pie(x, main = "Pie Chart [X]")
+```
+
+In terms of the histogram X distribution, we have a right-skewed shape, a center around 3, a spread of 10, and the value between 8 and 10 as an outlier.
+
+```{r p1-i y-dist, out.width="50%"}
+y = c(1.1, 2.3, 1.1, 3.6, 0.1, 1.0, 6.9, 4.8, 6.5, 7.8, 5.8, 8.0, 9.4, 9.8)
+hist(y, main = "Histogram [Y]")
+pie(y, main = "Pie Chart [Y]")
+```
+
+In terms of the histogram Y distribution, we have a bimodal shape, a center between 4 and 6, a spread of 10, and no apparent outliers. 
+
+(ii)
+
+```{r p1-ii-x boxplot, echo=FALSE, out.width= "50%"}
+boxplot(x,main="Box-and-Whisker Plot[X]", horizontal = T)
+boxplot(y,main="Box-and-Whisker Plot[Y]", horizontal = T)
+```
+
+**Five Number Summary[X]:**
+
+```{r p1-ii-x summary, echo=FALSE}
+summary(x)
+```
+
+**Variance[X]:**
+
+```{r p1-ii-x variance, echo=FALSE}
+var(x)
+```
+
+**Outliers[X]:**
+
+```{r p1-ii-x outliers, echo=FALSE}
+boxplot(x,plot = F)$out
+```
+
+**Five Number Summary[Y]:**
+
+```{r p1-ii-y summary, echo=FALSE}
+summary(y)
+```
+
+**Variance[Y]:**
+
+```{r p1-ii-y variance, echo=FALSE}
+var(y)
+```
+
+**Outliers[Y]:**
+
+```{r p1-ii-y outliers, echo=FALSE}
+boxplot(y,plot = F)$out
+```
+X's outlier analysis returns the value 9 from X, while Y returned no outliers. 
+
+(iii)
+
+```{r p1-iii scatterplot, echo=FALSE, out.width="50%", out.height= "50%", fig.align='center'}
+plot(x~y,main = "Scatter Plot[X,Y]")
+fm1 = lm(x~y)
+abline(fm1)
+```
+
+Correlation Coefficient: 
+
+```{r p1-iii coefficient, echo=FALSE}
+cor(x,y)
+```
+
+X and Y are proven to share a moderate linear association due to the fact that their correlation coefficient is closer to 1 than 0 by a small margin, resulting in a positive correlation coefficient. 
+
+(iv)
+
+```{r p1-iv, echo=FALSE,out.width="50%", out.height= "50%", fig.align='center'}
+X = c(0.2, 1.2, 0.9, 2.2, 3.2, 0.3, 1.7, 3.1, 2.3, 1.5, 2.5, 3.0, 2.6)
+Y = c(1.1, 2.3, 1.1, 3.6, 0.1, 1.0, 6.9, 4.8, 6.5, 7.8, 5.8, 8.0, 9.4)
+plot(X~Y,main = "Scatter Plot of X and Y with Outlier Removed")
+fm2 = lm(X~Y)
+abline(fm2)
+newcor = cor(X,Y)
+```
+Since X's outlier was 9 in our previous box-plot, I removed the XY pair (9.0,9.8), resulting in a different correlation coefficient of  `r newcor`.
+
+(v)
+
+While the correlation coefficient from part 3 was a moderately positive relationship (closest to 1), the correlation coefficient from part 4 was a weaker relationship (closer to 0). This was solely due to the omittance of our outlier in part 4, underlining the impact significant outliers can have on correlation coefficients. 
+
+(vi)
+```{r p1-vi, echo=FALSE,out.width="50%", out.height="50%"}
+qqnorm(x,main = "Normal QQ Plot [X]")
+qqline(x)
+qqnorm(y,main = "Normal QQ Plot [Y]")
+qqline(y)
+```
+When comparing both Normal QQ Plots for X and Y respectively, it becomes overly obvious that X is more likely to be of normal distribution. Not only is the average variance smaller for each data point, but the number of outliers are less compared to Y as well.
