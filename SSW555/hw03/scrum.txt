@@ -1,0 +1,80 @@
+*** Scrum process ***
+- product backlog
+- sprint planning
+- sprint backlog
+- daily Scrum
+- sprint execution
+- potential shippable product increment
+- sprint review
+- sprint retrospective
+
+*** Scrum roles ***
+- stackholders
+  - internal stakeholders
+  - customers/users
+  - product owner
+    - manage and maintains the product backlog
+    - represents the customer and customer needs 
+    - decides how users stories/features are prioritized
+
+- scrum team 
+  - scrum master
+    - communicates with stakeholders and manage process accordingly
+    - manage best practices of scrums(kanban, burn down charts, etc.)
+    - protects the dev team from outside interference
+    - works with product owner
+  - development team
+    - typically 3-10 members
+    - typically a manager is designated 
+    - small, cross functional, self-sufficient/organizing
+    - developers, testers, specialist
+    - reports to the team
+
+- As organizations get bigger more and more scrum teams can be used
+to handle projects
+
+*** Backlogs ***
+Hierachy of Backlogs (cards)
+- product backlogs, all features needed in product including completed feature
+  - release backlog, features needed in a version of a release and defined by product owner
+    - sprint backlog, feature to be completed in next sprint
+
+
+Managing the Product Backlogs
+- detailed appropriately
+- estimated effort/time
+- emergent
+- priority
+
+Gromming the Product Backlogs
+- creating and refining
+- prioritizing items
+- estimating items
+
+*** Sprints ***
+- typically 1wk to 1month
+
+*** Meetings ***
+- Sprint planning
+  - Product owner, Scrum master, Dev team
+  - define sprint goal, sprint backlog, 'definition of done'
+- Daily Standup
+  - Scrum master, Dev team
+- SPrint Review
+  - Product owner, Scrum master, dev team, stakeholders
+- Sprint Retro
+  - Dev team, scrum master
+  - improve process for next sprint
+
+*** Burndown chart ***
+
+- graph showing velocity at which features are pushed outside
+
+*** What could go wrong? ***
+- loss of rythm
+  - sprints with various length
+- daily standup meeting fail when non-developers ask questions
+- critical people are missing
+- velocity does not change
+- scrum master assigns works, the scrum master should only manage the process
+- too many specialized roles
