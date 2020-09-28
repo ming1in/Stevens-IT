@@ -38,7 +38,7 @@ public class BinaryNumber {
     }
   }
 
-  public int[] getInnerArray() {
+  public int[] getInnerArray() {d
     return this.data;
   }
 

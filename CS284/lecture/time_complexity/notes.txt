@@ -1,0 +1,19 @@
+*** Linear Growth Rate ***
+- T(n), denotes the unit of time an algorithm consumes relative to the size of the input(n)
+- Does not take into account hardware being used to run the program
+- T(n) belong to a greater class of function O(n)
+
+*** Table Notation ***
+The goal of Table Notation is to keep count of the total amount of operation(x)
+given an input(i)
+
+i = input
+x = time complexity of operation with input(i)
+
+i | x
+-----
+  | 
+  |
+  |
+  |
+

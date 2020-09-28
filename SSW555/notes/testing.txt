@@ -1,0 +1,61 @@
+*** Software Testing ***
+  - The goal of software testing is to determine if the implementation
+  if the implementation meets its specifications
+
+  - Testing identifies problems -> debugging fixes problems
+
+  - In waterfall method, testing is done at the end
+  - In agile, testing is done throughout development
+
+*** Traditional Testing Process ***
+1) Unit Testing
+  - ensures that recently implemented changes work
+  - Who: Developers
+  - What: New features, code, branches coverage
+  - When: after code is completed and before integration
+2) Integration Test
+  - ensures that new components work with other components written by other 
+   developers and can be cleanly integrated
+  - Who: Developers, Testers
+  - What: Test multiple modules from different developers
+  - When: after unit test is completed on relevant modules
+3) Regression Test
+  - verify that changes have not introduced new bug after being released
+  - Who: Testers
+  - What: Integrated modules
+  - When: after changes to code for bug fixes and integration
+4) System Testing
+  - ensures that complete system is complete
+  - may include functionality, performance, and stress testing, etc.
+  - Who: System Test Team(not developers)
+  - What: Test complete system, performance & security, and stress testing
+  - When: after all code is completed and tested
+5) User Acceptance Test
+  - customer verifies that the system performs as expected and meets requirements
+  - Who: Customer test engineers
+  - What: complete system based on requirements
+  - When: After system testing, before final payment
+
+*** Traditional Testing Gates ***
+  - process of testing where if a testing process fails then the testing process is 
+    restarted
+
+*** When to integrate? ***
+  - in agile method, integration is done more frequently(daily or every code commit)
+  - in traditional methods, integration is more scarcely(weekly or after all code completion)
+
+*** Agile Testing Process ***
+  - Agile testing is very similar to traditional testing methods, however the 
+    biggest difference is that ONLY DEVELOPERS test the code base.
+  - Developers use automated testing platforms with tests written before code
+    is written
+  - Acceptance testing is done at the end of sprint during sprint review with
+    product owners and stakeholders. Testing is done to systems and code 
+    written in the prior sprint
+
+*** Test Driven Development ***
+  - test is written first
+  - test is ran throughout development
+  - code is good once all test cases are done
+  - write some test, write some code, then repeat
+  
