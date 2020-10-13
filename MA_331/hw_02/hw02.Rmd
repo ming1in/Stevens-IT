@@ -1,7 +1,8 @@
 ---
 title: "Homework 02"
 author: "Ming Lin"
-output: pdf_document
+output:
+  pdf_document: default
 output_file: "./MA331/hw02/homework02.pdf"
 ---
 

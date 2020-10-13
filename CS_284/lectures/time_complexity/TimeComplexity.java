@@ -161,6 +161,28 @@ public class TimeComplexity {
     }
   }
 
+ /**
+   * time complexity: T(n) = 
+   * 
+   * 
+   *  i  | x
+   * ----------
+   *  1  | 0
+   *  2  | 2
+   *  3  | 0 
+   *  4  | 4
+   */
+
+  public static void method9(int n) {
+    for (int i = 0; i < n; i++) {
+      if (i % 2 == 0) {
+        for (int j = 0; j < i; j++) {
+          System.out.println('Hi');
+        }
+      }
+    }
+  }
+
 
 
 

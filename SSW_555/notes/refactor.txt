@@ -1,0 +1,52 @@
+*** Refactoring ***
+- users should not notice that the code has been refactored
+
+- should improve readability and reduce complexity
+
+- is not about performance optimization
+
+- is critical for code tha changes frequently
+
+- does not add/change new functionality or tests
+
+** Benefits Refactoring? ** 
+- refreshes the design and the code to reflect and optimal
+  solution for our latest understanding of the problem/solutions
+
+- improves the design of software
+
+- makes software easier to understand and changes
+
+- helps you to find bugs
+
+- helps you to program faster
+
+- is needed to pay off 'technical debt'
+
+- XP supports collective code ownership and everyone can refactor code
+
+** Technical Debt **
+- additional development, testing, and maintenance effort
+
+- cause by bad design and shortcuts
+
+- tech debts accumulate interest and make changes even harder later
+
+** When to refactor  **
+- when you add functionality
+
+- when you need to fix a bug
+
+- during code review
+
+Bad Smells
+
+- as you read code you may realize that it needs to be refactored
+
+- not necessarily a bug, but something not optimal
+
+- examples: duplicated code, long methods, large classes, unnecessary complexity
+
+- bad smells in classes: very large classes, classes  who relies on another class,
+
+

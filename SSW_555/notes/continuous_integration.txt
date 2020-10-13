@@ -1,0 +1,41 @@
+*** Continuous Integration(Waterfall) ***
+- everyone integrates together
+
+- integration testing happens all at once
+
+- follows rigid process
+
+*** Continuous Integration(Agile) ***
+- each individual integrate and test on their pace
+
+- CI flow 
+  - code repo w/ automated tests-> CI build tools -> build and test results
+
+- Best Practices
+  - maintain a single source code repo, keep everything needed to build in the repo * 
+
+  - automate the build process and testing of new builds
+
+  - frequent code commits from all developers
+    - at least daily if not more frequent
+
+  - build and test in development environment
+
+  - fix build problems quickly
+
+  - make it easy for everyone to get latest build
+
+- Benefits
+  - reduced risk
+
+  - detect and fix bugs quickly and easily
+
+  - relatively little new, untested code at any given time
+
+  - developers fix bugs when code is fresh in their minds
+
+  - enable Continuous delivery to customers
+
+  - fewer bugs associated with automated testing
+
+- Tools: Travis CI, Jenkins, TeamCity, Bamboo

@@ -1,0 +1,51 @@
+---
+title: "MA331 Homework 3 - Aparajita Rana"
+output: pdf_document
+---
+I pledge my honor that I have abided by the Stevens Honor System. - Aparajita Rana
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('/Users/tringapps/Desktop/p1.png')
+```
+iv) & v)
+```{r echo=FALSE, out.width="50%"}
+m_estim <- function(vals){
+  m_estimate=(2/length(vals))* sum(vals)
+  return(m_estimate)
+}
+
+l_estim <- function(vals){
+  l_estimate=max(vals)
+  return(l_estimate)
+}
+
+values <- matrix(0, nrow = 100, ncol = 30)
+for(x in 1:100){
+  values[x,]=runif(n=30, min = 0, max=7)
+}
+m_esti=NULL
+l_esti=NULL
+for(x in 1:100){
+  m_esti[x]=m_estim(vals=values[x,])
+  l_esti[x]=l_estim(vals=values[x,])
+}
+mean(m_esti)
+mean(l_esti)
+boxplot(m_esti, l_esti, main="Box Plot of Estimates")
+axis(1, at=1:2, labels=c("M estimate", "L estimate"))
+points(c(mean(m_esti), mean(l_esti), col="red", pch=19))
+
+sizes <- c(20,30, 50, 100, 150)
+m_esti2=NULL
+l_esti2=NULL
+for(x in 1:5){
+  vals <- runif(n=sizes[x], min=0, max=7)
+  m_esti2[x]=m_estim(vals)
+  l_esti2[x]=l_estim(vals)
+}
+plot(m_esti2, pch=19, col="red", xlab="index", ylab="M estimate", main="Plot of M Estimate")
+plot(l_esti2, pch=19, col="blue", xlab="index", ylab="L estimate", main="Plot of L Estimate")
+plot(m_esti2, l_esti2, col="green", xlab="M estimate", ylab="L estimate", main="Plot of M & L Estimate")
+```
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('/Users/tringapps/Desktop/p2&3.png')
+```

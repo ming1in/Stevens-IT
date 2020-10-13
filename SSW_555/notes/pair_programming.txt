@@ -1,0 +1,68 @@
+*** Pair Programming ***
+
+- Overview
+  - 2 programmers sit in front of the same computer
+
+  - 1 driver and 1 navigator
+
+  - they switch every 15-20min
+
+- Guidelines
+  - change roles often
+  
+  - work with someone at the same level of experience **
+
+  - communicate
+    - 15 secs without talking is a very long time
+    - driver should explain what you're doing
+    - listen to your partner
+
+- Research Results
+
+  - pairs work almost twice as fast as individuals
+
+  - pairs produce higher quality work than individuals
+
+  - some pairs may not work well together
+    - pairs with mismatched experience may not be effective
+
+- Myths
+  - it will take twice as long
+  - i will never get to work alone
+  - it only works with the right partner
+  - it only good for training
+  - i will have to share credit
+  - the navigator only finds syntax errors
+  - I wont be able to concentrate
+
+- Benefits: Synergetic Behaviors of Pair Programming
+  - Pair Pressure
+    - Pairs keep each other on task
+    - Pairs treat their shared time as more valuable
+    - pairs follow standard processes more readily
+  
+  - Pair Negotiation
+    - Pairs share the same goal
+    - bring different ideas and points of view
+    - discuss which strategy works best
+
+  - Pair Courage
+    - its easier to get started if you know you have help
+    - get affirmation
+
+  - Pair Review
+    - catch mistakes the moment they occur
+    - its more fun to pair than to do code inspection
+
+  - Pair Debugging
+    - describing the problem to someone else in order to solve it 
+    - partner will ask questions you should ask yourself
+
+  - Pair Learning
+    - observe and learn from how someone else solves the problem
+    - pairs learn about the domain by working with others
+
+  - Pair Trust
+    - the good of the many outweights the good of the one 
+    - trust encourages confidence which may improve speed
+
