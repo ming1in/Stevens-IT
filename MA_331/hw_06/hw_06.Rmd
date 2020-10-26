@@ -1,0 +1,12 @@
+---
+title: "Homework 06"
+author: "Ming Lin"
+output: pdf_document
+output_file: "./MA_331/hw_03/hw_06.pdf"
+---
+
+I pledge my honor that I have abided by the Stevens Honor System. 
+
+Problem 9.37
+
+a)
