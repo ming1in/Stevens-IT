@@ -1,3 +1,5 @@
+package lists;
+
 public class SLL<E> {
 
   // Inner class
