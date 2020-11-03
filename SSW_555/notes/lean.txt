@@ -1,0 +1,23 @@
+** Lean Development **
+- Empower people
+- Continuously improve
+- Create value for the customer
+- Eliminate waste
+- Optimize value streams
+
+** Toyota's 7 Principles of Lean **
+1.Eliminate waste
+2.Amplify learning
+3.Decide as late as possible
+4.Deliver as fast as possible
+5.Empower the team
+6.Build integrity in
+7.See the whole
+
+** Lean Practices **
+- Value stream mapping
+- Set-based Development
+- Pull systems
+
+
+ 
