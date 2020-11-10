@@ -1,6 +1,8 @@
 package Maze;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Stack;
 
 /**
  * Class that solves maze problems with backtracking.
@@ -65,7 +67,7 @@ public class Maze implements GridColors {
             backtrack.push(newPair);
             ArrayList<PairInt> temp = new ArrayList<PairInt>();
             temp.addAll(backtrack);
-            res.add(temp);
+            result.add(temp);
             backtrack.pop();
             maze.recolor(x, y, NON_BACKGROUND);
             return;
@@ -73,17 +75,17 @@ public class Maze implements GridColors {
             PairInt newPair = new PairInt(x, y);
             backtrack.push(newPair);
             maze.recolor(x, y, TEMPORARY);
-            this.findMazePathStackBased(x - 1, y, res, backtrack); //left
-            this.findMazePathStackBased(x + 1, y, res, backtrack); //right
-            this.findMazePathStackBased(x, y - 1, res, backtrack); //top
-            this.findMazePathStackBased(x, y + 1, res, backtrack); //bottom
+            this.findMazePathStackBased(x - 1, y, result, backtrack); //left
+            this.findMazePathStackBased(x + 1, y, result, backtrack); //right
+            this.findMazePathStackBased(x, y - 1, result, backtrack); //top
+            this.findMazePathStackBased(x, y + 1, result, backtrack); //bottom
             maze.recolor(x, y, NON_BACKGROUND);
             backtrack.pop();
             return;
         }
     }
 
-    publicArrayList<ArrayList<PairInt>> findAllMazePaths(int x, int y) {
+    public ArrayList<ArrayList<PairInt>> findAllMazePaths(int x, int y) {
         ArrayList<ArrayList<PairInt>> result = new ArrayList<>();
         Stack<PairInt> backtrack = new Stack<>();
         findMazePathStackBased(0, 0, result, backtrack);
@@ -92,7 +94,7 @@ public class Maze implements GridColors {
     }
     
     // ADD METHOD FOR PROBLEM 3 HERE
-    publicArrayList<PairInt> findMazePathMin(int x, int y) {
+    public ArrayList<PairInt> findMazePathMin(int x, int y) {
         ArrayList<ArrayList<PairInt>> paths = findAllMazePaths(x, y);
         int shortest[] = new int[paths.size()];
         int max = shortest[0];

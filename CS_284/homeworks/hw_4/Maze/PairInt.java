@@ -1,3 +1,5 @@
+package Maze;
+
 public class PairInt {
   private int x;
   private int y;
@@ -25,7 +27,8 @@ public class PairInt {
 
   public boolean equals(Object p) {
     if (p instanceof PairInt) {
-      if (this.x == p.getX() && this.y == p.getY()) {
+      PairInt newPairInt = (PairInt) p;
+      if (this.x == newPairInt.getX() && this.y == newPairInt.getY()) {
         return true;
       } else {
         return false;
@@ -36,13 +39,13 @@ public class PairInt {
   }
 
   public String toString() {
-    StringBuilder string = new StringBuilder();
-    string.append('(');
-    string.append(this.x);
-    string.append(',');
-    string.append(this.y);
-    string.append(')');
-    return string;
+    StringBuilder result = new StringBuilder();
+    result.append('(');
+    result.append(this.x);
+    result.append(',');
+    result.append(this.y);
+    result.append(')');
+    return result.toString();
   }
 
   public PairInt copy() {
