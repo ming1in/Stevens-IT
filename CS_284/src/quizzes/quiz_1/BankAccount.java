@@ -1,4 +1,4 @@
-package quiz1;
+package src.quizzes.quiz_1;
 
 /*
 Vincent Tufo, Ming Lin

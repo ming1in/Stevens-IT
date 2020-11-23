@@ -1,3 +1,5 @@
+package src.exercise_book.growth_rate;
+
 public class GrowthRate {
 
 
