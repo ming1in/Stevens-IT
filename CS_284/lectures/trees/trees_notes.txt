@@ -1,0 +1,54 @@
+** Binary Tree **
+  - Properties
+    - each element has at most two children
+
+  - Terminology
+    - Node
+    - Root: first node is BT
+    - Branch: link between node
+    - Children: successors of a node
+    - Parent: predecessor of a node
+    - Siblings: nodes with the same parents
+    - Leaf: a node with child(ren)
+    - Ancestor: generalization of parent-child
+    - Subtree: tree whose root is a child of that node
+    - Height: number of nodes in the longest path the root to a leaf
+    - Level: sections of the tree, starting from 1 or 0 at the root
+
+** Binary Search Tree **
+   - Properties
+    - left child is less than parent
+    - right child is greater than parent
+    - each element has at most two children(prop of BT)
+
+  - Operations
+    - Finding a given node 
+      - Time complexity is typically O(log(n)) where half the elements eliminated each iteration
+      - Worse case time time complexity is O(n), n = height of the tree, where the given node is 
+        at the end of the longest path
+
+** Full, Perfect, Complete Binary Tree **
+  - Full Binary Tree
+    - all nodes have either 2 children OR 0 children  
+
+  - Perfect Binary Tree
+    - is a Full Binary Tree
+    - all leaves have the same depth
+    - a Perfect Binary Tree has (2^n) - 1 nodes, n = height of the tree
+
+  - Complete Binary Tree
+    - a perfect tree up to level(n-1), n = height of tree
+    - all the extra leaf node must be orientated from the left
+
+  - Relation between each tree
+    - Perfect = Complete
+    - Complete != Perfect
+    - Full != Complete
+    - Complete != Full
+
+** Tree Traversals **
+  - Preorder: root, left, right
+  - Inorder: left, root, right
+  - Postorder: left, right, root
+
+
