@@ -1,5 +1,6 @@
 package lectures.sll;
 
+import lectures.basics.Pair;
 public class SLL_Recursion<E> {
 
 	public static class Node<F> {
@@ -391,7 +392,7 @@ public class SLL_Recursion<E> {
 		while (current != null) {
 			if (!chk.mem(current.data)) {
 				chk.add(current.data);
-				result.add(new Pair<E, Integer>(current.data, itemCount(current.data)));
+				// result.add(new Pair<E>(current.data, itemCount(current.data)));
 			}
 			current = current.next;
 

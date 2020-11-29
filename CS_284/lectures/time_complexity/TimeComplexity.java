@@ -49,11 +49,11 @@ public class TimeComplexity {
    until n-1, the time complexity of inner for-loop is 1
   */
   public static void method3(int n) {
-    for (int i = 1; i < n; i++) {
-      for (int j = 1; j < n; j *= 2) {
-        break;
-      }
-    }
+    // for (int i = 1; i < n; i++) {
+    //   for (int j = 1; j < n; j *= 2) {
+    //     break;
+    //   }
+    // }
   }
 
   /**
@@ -89,9 +89,9 @@ public class TimeComplexity {
    */
   public static boolean method5(int[] x, int[] y) {
     for (int i = 0; i < x.length; i++) {
-      if (f(y, x[i]) != -1) {
-        return false;
-      }
+      // if (f(y, x[i]) != -1) {
+      //   return false;
+      // }
     }
     return true;
   }
