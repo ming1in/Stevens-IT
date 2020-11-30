@@ -1,1 +1,64 @@
 *** Crystal ***
+  - a family framework of methods and a set of guidelines that you adjust to meet your project's needs
+
+  - The family of Crystal projects
+    - Crystal project are categories by criticality and size of the team. For example a L6 projects
+      is a mission critical project with a 6 person team
+
+    - Smaller projects require fewer roles and larger projects require additional roles
+
+    - Criticality of the Project
+      - Life(L), a mission critical project that could be deathly if it fails
+      - Essential Money(E), a project that could be financially costly if it fails
+      - Discretionary Money(D), a 'side project' that low risk
+      - Comfort(C), a project that has low business risks
+
+    - There are different methods depending on the size of the team 
+      - Clear(6), 
+      - Yellow(20),
+      - Orange(40),
+      - Red(80),
+      - Maroon(200),
+
+  - Properties of Crystal
+    - Properties should be true about any project
+    - Frequent delivery, 2 to 4 week intervals
+    - Reflective improves, workshops every few weeks to review parts of the projects
+    - Osmotic communications, improve communication across teams and developers
+    - Personal safety, every feel comfortable to give their opinions
+    - Focus
+    - Easy access to domain experts
+    - Technical environment, automated test 
+    - Collaboration across organizational boundaries
+
+  - Strategies of Crystal
+    - Strategies are a plan to accomplish a goal
+    - Higher level approaches to solving problems
+    - Exploratory 360, 
+    - Early victory
+    - Walking skeleton, tiny end-to-ed versions of systems functionality
+    - Incremental re-architecture
+    - Information radiators, display useful information(i.e burn down charts) through osmotic communication
+  
+  - Techniques
+    - Techniques are things you do
+    - Skills that the team can develope and use to solve problems
+    - Reflection workshops
+    - Blitz planning/Planning “Jam Session”
+    - Delphi estimation, estimating how long a user stories or task will take
+    - Daily stand-up
+    - Agile interactive design
+    - Role modeling session
+      - write down a feature or user story on cards
+      - write the goal on the cards
+      - talk through implementing the feature on each card
+    - Process miniature
+
+  - Crystal vs XP
+    - Differences
+      - XP requires more discipline than Crystal Clear because of mandatory practices
+      - XP can be more productive than Crystal Clear
+      - It is easier to start using Crystal Clear
+      - It is easy to fall back from XP to Crystal Clear
+
+
