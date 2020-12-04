@@ -1,0 +1,79 @@
+*** Heap ***
+
+  ** Types of Heaps **
+    - Min Heap, a complete binary tree with additional properties: 
+      - The value in the root is the smallest item in the tree
+      - Every subtree is a heap
+
+    - Max Heap, a complete binary tree with additional properties: 
+      - The value in the root is the largest... item in the tree
+      - Every subtree is a heap
+
+  ** Implementing a Heap **
+    - Because a heap is a complete BT, it is more efficient to implement using a array
+      rather than a linked data structure
+
+    - For example, the given heap
+
+                _____6_____
+               /           \
+              18            29
+            /    \         /  \
+          20     28       39   66
+         /  \   /  \     /  \
+        37  26 76  32   74  89
+
+      Can be represent as a array where the elements are breadth-first traversal order. The 
+      given heap can be represented using array and would be:
+
+      [6, 18, 29, 20, 28, 39, 66, 37, 26, 76, 32, 74, 89]
+
+      With each node, denoted as p, having the following properties to identify 
+      parent and child(ren) positions in the array:
+      - Left child: 2p + 1
+      - Right child: 2p + 2
+      - Parent: (p - 1) / 2
+
+  ** Operations of a Heap **
+    - Inserting a item
+      - Order of operations
+        1. New item should always be initially inserted into the lowest level at the left most position
+          in order to maintain a complete BT
+        2. Afterwards, reheap if the new item is LESS THAN its parent by swapping the child and parent
+        3. Continue to reheap, swap child w/ parents, until the value of each parent is smaller than it children
+
+      - Pseudo code
+        ```
+        Insert e in the next position at the bottom of the Heap
+
+        while (e not at the root and is smaller than its root){
+          Swap e with its parent, moving e up the heap
+        }
+        ```
+      
+      - Time complexity: O(log(n)), n = # number of nodes
+
+    - Removing a item
+      - Order of operations
+        1. Swap the root with the last item, the left-most item on the lowest level
+        2. Reheap, by swapping the root with smallest child element
+        3. Continue to reheap, swap parent w/ children, until the value of each parent is smaller than it children
+
+      - Pseudo code
+        ```
+        Remove the item in the root by replacing it with the last item in the heap (LIH)
+        
+        while(item LIH has children and it is larger than than either of its children) {
+          Swap item LIH with its smaller child, moving LIH down the heap
+        }
+        ```
+  
+      - Time complexity: O(log(n)), n = # number of nodes
+
+  ** Performance of a Heap **
+    - Remove operation traces a path from the root to the a leaf
+    - Insert operation traces a path from the leaf to the root
+    - Both operations requires at most h steps, h = height of the tree
+    - A tree of height h has at most (2^h) - 1 nodes
+    - A tree of height h has at least 2^(h - 1) nodes
+    - Both insert and remove operations have a time complexity of O(log(n))

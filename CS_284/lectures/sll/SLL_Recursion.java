@@ -57,38 +57,45 @@ public class SLL_Recursion<E> {
 
 	}
 
-	private Node<E> addR(E item, Node<E> current) {
+
+
+	private Node<E> addRecurUtil(E item, Node<E> current) {
 		if (current == null) {
 			return new Node<E>(item);
 		}
-		current.next = addR(item, current.next);
-		return current;
 
+		current.next = addRecurUtil(item, current.next); //recur through rest of list
+		return current;
 	}
 
-	public E addR(E item) {
+	//recursively add item to the list
+	public E addRecur(E item) {
 
-		head = addR(item, head);
+		this.head = addRecurUtil(item, this.head);
 		size++;
 		return item;
+}
 
+
+
+
+private Node<E> removeLastRecurUtil(Node<E> current ) {
+	if (current.next == null) {
+		return null;
 	}
 
-	private Node<E> removeLastR(Node<E> current) {
-		if (current.next == null) {
-			return null;
-		} else {
-			current.next = removeLastR(current.next);
-			return current;
-		}
-	}
-
-	public void removeLastR() {
-		if (head == null) {
-			throw new IllegalStateException("removeLastR: list is empty");
-		}
-		head = removeLastR(head);
-		size--;
+	current.next = removeLastRecurUtil(current.next);
+	return current;
+}
+/**
+ * remove last element recursively
+ */
+public void removeLastRecur() {
+	if (this.head == null) {
+		throw new IllegalStateException("removeLastRecur: List is empty");
+	}	
+	head = removeLastRecurUtil(this.head);
+	size--;
 	}
 
 	// add item at given index
@@ -206,23 +213,29 @@ public class SLL_Recursion<E> {
 
 	}
 
-	private boolean memR(E item, Node<E> current) {
-		if (current == null) {
+	private boolean memRecurUtil(E item, Node<E> current) { //this should be private because class node should not be publicly accessible
+		if (current == null) { //base case: reach end of list
 			return false;
 		}
-		// current is not null
-		if (current.data.equals(item)) {
+
+		if (current.data.equals(item)) { //base case: found duplicate item
 			return true;
-		} else { // current is not null and current.data is not the item I am looking for.
-			return memR(item, current.next);
+		} else {
+			return memRecurUtil(item, current.next);
 		}
-
 	}
 
-	public boolean memR(E item) {
-		return memR(item, head);
-	}
 
+	/**
+	 * recursively checks if item exist in linked list
+	 */
+	public boolean memRecur(E item) {
+		return memRecurUtil(item, this.head);
+	}
+	
+	/**
+	 * checks if item exist in linked list
+	 */
 	public boolean mem(E item) {
 		boolean found = false;
 		Node<E> current = head;
@@ -295,11 +308,14 @@ public class SLL_Recursion<E> {
 		if (current == null) {
 			return result;
 		}
-		result.append(current.data.toString() + ",");
-		result.append(toString(current.next));
+
+		result.append(current.data.toString() +','+ toString(current.next));
 		return result;
 	}
 
+	/**
+	 * recursive toString
+	 */
 	@Override
 	public String toString() {
 		return "[" + toString(head).toString() + "]";
@@ -409,10 +425,10 @@ public class SLL_Recursion<E> {
 	          }
 	      
 	          System.out.println(l);
-	          l.addR(33);
-	          l.addR(74);
+	          l.addRecur(33);
+	          l.addRecur(74);
 	          System.out.println(l);
-	          l.removeLastR();
+	          l.removeLastRecur();
 	          System.out.println(l);
 	          
 	          

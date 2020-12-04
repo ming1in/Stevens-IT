@@ -124,8 +124,15 @@ public class SLL<E> {
 		
 	}
 
+
+
+
+	//-----------------------------------------------------------------------
+
 	//TODO
-	public void addR(E item, int index) {
+
+	//Ming's Response
+	public void addRecur(E item, int index) {
 		if (index < 0 || index > size) {
 			throw new IllegalArgumentException("Index out of bounds");
 		}
@@ -136,6 +143,35 @@ public class SLL<E> {
 		// the list is not empty
 		addR(item, index, head);
 	}
+
+	//Bonelli's Response
+
+	private Node<E> addRecurBonUtil(E item, int index, Node<E> current ){
+		if (index == 0) { // if we reach the given index 
+			return new Node<E>(item, current); //set the new Node and it next Node to to the current
+		} else {
+			current.next = addRecurBonUtil(item, index - 1, current.next);
+			return current;
+		}
+
+	}
+
+	public void addRecurBon(E item, int index) {
+		if (index < 0 || index > this.size) {
+			throw new IllegalArgumentException("addRecurBon: index out of bounds");
+		}
+
+		this.head = addRecurBonUtil(item, index, this.head);
+		size++;
+	}
+
+
+	// -----------------------------------------------------------------------
+
+
+
+
+
 	
 	/** 
 	 * Removes and returns the first item from the list
@@ -233,9 +269,16 @@ public class SLL<E> {
 
 	}
 	
+
+
+	// -----------------------------------------------------------------------
+
 	//TODO
+
+	//Ming's Response 
 	public SLL<E> cloneR() {
 		SLL<E> result = new SLL<E>();
+
 
 		result = cloneHelper(result, head);
 		return result;
@@ -250,6 +293,28 @@ public class SLL<E> {
 			return cloneHelper(resultList, n.next);
 		}
 	}
+
+	//Bonelli's Response
+	private Node<E> cloneRecurUtil(Node<E> current) {
+		if (current == null) {
+			return null;
+		} else {
+			return new Node<E>(current.data, cloneRecurUtil(current.next));
+		}
+	}
+
+	public SLL<E> cloneRecur() {
+		SLL<E> result = new SLL<E>();
+		result.head = cloneRecurUtil(this.head);
+		result.size = this.size;
+		return result;
+	}
+
+	// -----------------------------------------------------------------------
+
+
+
+
 	
 	private boolean memR(E item, Node<E> current) {
 		if (current==null) {
@@ -465,10 +530,14 @@ private Node<E> mergeInto(Node<E> l1, Node<E> l2) {
 	          System.out.println(l);
 	          l.addR(33);
 						l.addR(74);
-						l.addR(10, 4);
+						l.addRecur(10, 4);
 	          System.out.println(l);
 	          l.removeLastR();
-	          System.out.println(l);
+						System.out.println(l);
+						
+						SLL<Integer> l2 = l.clone();
+
+						System.out.println(l2);
 	          
 	          
 //	          SLL<Pair<Integer,Integer>> l2 = l.histogram();
