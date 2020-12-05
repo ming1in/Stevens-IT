@@ -26,7 +26,7 @@
       Can be represent as a array where the elements are breadth-first traversal order. The 
       given heap can be represented using array and would be:
 
-      [6, 18, 29, 20, 28, 39, 66, 37, 26, 76, 32, 74, 89]
+      [ 6, 18, 29, 20, 28, 39, 66, 37, 26, 76, 32, 74, 89 ]
 
       With each node, denoted as p, having the following properties to identify 
       parent and child(ren) positions in the array:

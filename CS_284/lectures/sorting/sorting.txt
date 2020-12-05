@@ -1,0 +1,13 @@
+*** Sorting *** 
+
+  ** O(n^2) Sorting Algorithms **
+    - Selection Sort
+    - Bubble Sort
+    - Insertion Sort
+
+  ** O(nlog(n)) Sorting Algorithms **
+    - Merge Sort
+    - Heap Sort
+    
+
+

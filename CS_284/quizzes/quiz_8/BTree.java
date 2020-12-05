@@ -19,6 +19,15 @@ public class BTree<E> {
 			super();
 			this.data = data;
 		};
+
+		public int size(){
+			int result = 1;
+
+			result += (this.left == null ? 0 : left.size());
+			result += (this.right == null ? 0 : right.size());			
+
+			return result;
+		}
 		
 	
 	}
@@ -94,6 +103,8 @@ public class BTree<E> {
 		return isFull2(root);
 	}
 
+	// TODO --------------------------------------------------------------------------------
+
 	public void pruneHelper(int pruneLevel, int currentLevel, Node<E> currentNode) {
 		if (currentLevel >= pruneLevel) {
 			currentNode.data = null;
@@ -136,22 +147,65 @@ public class BTree<E> {
 	public boolean isomorphic(BTree<E> t2) {
 		return isomorphicHelper(root, t2.root);
 	}
+
+	// Answers --------------------------------------------------------------------------------------
+
+	private Node<E> prune2Util(int level, Node<E> current) {
+		if (level == 0 || current == null) {
+			this.size = this.size - (current == null ? 0 : current.size());
+			return null;
+		}
+
+		current.right = prune2Util(level - 1, current.right);
+		current.left = prune2Util(level - 1, current.left);
+		
+		return current;
+	}
+
+	public void prune2(int level) {
+
+		if (level < 0) {
+			throw new IllegalArgumentException("prune2: level can not be negative");
+		}
+		this.root = prune2Util(level, this.root);
+		return;
+	}
+
+	private boolean isomorphic2Util(Node<E> current1, Node<E> current2) {
+		
+		//two empty roots are isomorphic
+		if (current1 == null && current2 == null) {
+			return true;
+		}
+
+		// at least one node is not empty
+		if (current1 != null && current2 != null && current1.data.equals(current2.data)){
+			return (isomorphic2Util(current1.left, current2.left) && isomorphic2Util(current1.right, current2.right)) ||
+				(isomorphic2Util(current1.left, current2.right) && isomorphic2Util(current1.right, current2.left));  
+		} else {
+			return false;
+		}
+
+
+	}
+	
+	public boolean isomorphic2(BTree<E> t2) {
+
+		return isomorphic2Util(this.root, t2.root);
+		
+	}
+
 	
 	public static void main(String[] args) {
 		BTree<Integer> t1 = new BTree<>(4);
-		
 		BTree<Integer> t2 = new BTree<>(33,new BTree<>(24), new BTree<>(44));
-				
 		BTree<Integer> t = new BTree<>(12, t1, t2);
-		// BTree<Integer> t4 = new BTree<>(12, t2, t1);
 
-		t.prune(2);
-				
-		System.out.println(t);
-		System.out.println("Height: "+t.height());
-		System.out.println("Nodes: "+t.nodes());
-		System.out.println("IsFull: "+t.isFull());
-		
+		BTree<Integer> s1 = new BTree<>(4);
+		BTree<Integer> s2 = new BTree<>(33, new BTree<>(24), new BTree<>(44));
+		BTree<Integer> s = new BTree<>(12, s2, s1);
+
+		System.out.println(s.isomorphic2(t)); //true	
 	}
 	
 	
