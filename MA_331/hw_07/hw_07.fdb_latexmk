@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1605326831 "/Users/minglin/Stevens-IT/MA_331/hw_07/hw_07.tex" "/Users/minglin/Stevens-IT/MA_331/hw_07/hw_07.pdf" "hw_07" 1605326832
-  "/Users/minglin/Stevens-IT/MA_331/hw_07/hw_07.aux" 1605326832 8 a94a2480d3289e625eea47cd1b285758 ""
-  "/Users/minglin/Stevens-IT/MA_331/hw_07/hw_07.tex" 1605326831 8313 ffb595bdcb2d6c533d8c32d055b4a013 ""
+["pdflatex"] 1607135542 "/Users/minglin/Stevens-IT/MA_331/hw_07/hw_07.tex" "/Users/minglin/Stevens-IT/MA_331/hw_07/hw_07.pdf" "hw_07" 1607135543
+  "/Users/minglin/Stevens-IT/MA_331/hw_07/hw_07.aux" 1607135543 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/Users/minglin/Stevens-IT/MA_331/hw_07/hw_07.tex" 1607135542 8315 b911db02c46d17dd8866428aadc95a1c ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -62,14 +62,14 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1586288239 4811913 0be9a7e86c70a26e5e3042966bcd7097 ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1599456965 2432464 2fb755e970e97c33ca00724149a50527 ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "hw_07.aux" 1605326832 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
-  "hw_07.tex" 1605326831 8313 ffb595bdcb2d6c533d8c32d055b4a013 ""
+  "hw_07.aux" 1607135543 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "hw_07.tex" 1607135542 8315 b911db02c46d17dd8866428aadc95a1c ""
   "images/ctrlHist.png" 1605324723 17839 77a49e09bf3f3d0827390e2479152fd3 ""
   "images/grpHist.png" 1605324727 17792 5bba13def42191844304b616c30b7901 ""
   "images/indivHist.png" 1605324730 16201 9015ddb2932d9533b0e9e5b27fe3e524 ""
   (generated)
-  "hw_07.pdf"
   "hw_07.aux"
-  "/Users/minglin/Stevens-IT/MA_331/hw_07/hw_07.pdf"
   "hw_07.log"
+  "hw_07.pdf"
   "/Users/minglin/Stevens-IT/MA_331/hw_07/hw_07.log"
+  "/Users/minglin/Stevens-IT/MA_331/hw_07/hw_07.pdf"

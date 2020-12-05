@@ -1,0 +1,241 @@
+---
+title: "HW8"
+author: "Ming Lin"
+doutput:
+  pdf_document: default
+  html_document: default
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+**Question 10.32**
+**Part A: Use numerical and graphical methods to describe the variable IBI. Do the same for area. Summarize your results.**
+```{r echo=FALSE, out.width="60%", echo=FALSE}
+IBI <- c(47,61,39,59,72,76,85,89,74,89,33,46,32,80,80,78,53,43,88,84,62,55,29,29,54,78,71,55,58,71,33,59,81,71,75,64,41,82,60,84,83,82,82,86,79,67,56,85,91)
+
+Area <- c(21,29,31,32,34,34,49,52,2,70,6,28,21,59,69,47,8,8,58,54,10,57,18,19,39,49,9,5,14,9,23,31,18,16,21,32,10,26,9,54,12,21,27,23,26,16,26,26,28)
+```
+Numerical and graphical methods for variable IBI:
+```{r, out.width="50%", echo=FALSE}
+summary(IBI)
+hist(IBI)
+```
+
+IBI data has a strong skew to the left. No outliers.
+
+Numerical and graphical methods for area:
+
+```{r, out.width="60%", echo=FALSE}
+summary(Area)
+hist(Area)
+```
+
+Area data has a slight skew to the right. Upper outlier present.
+
+**Part B**
+
+```{r, out.width="60%", echo=FALSE}
+plot(Area,IBI,main="Area and IBI Scatterplot")
+```
+
+IBI is more varied when the area is lower, this has no outliers visible
+
+**Part C**
+
+$IBI\:=\:\beta _0+\beta _1\left(Area\right)\:+\:\xi _i,i=1,2,...,49$
+
+$IBI = 52.92+0.46*Area+\epsilon$
+
+**Part D**
+
+Null Hypothesis: $\beta _1=0$
+
+Alternative Hypothesis: $\beta _1\ne \:0\:$
+
+**Part E**
+
+Significance Level= 0.05
+
+$$T=\frac{\hat{\beta _{1\:}}}{SE_{\hat{\beta \:_{1\:}}\:}}=3.41$$
+
+$$SE_{\hat{\beta _1}}=\sqrt{\frac{S^2}{\sum _{i=1}^n\left(x_i=\hat{x}\right)^2}}=0.13$$
+
+$$S^2=\frac{\sum _{i=1}^n\left(y_i-\hat{y_i}\right)^2}{n-2}=273.4$$
+
+Degrees of Freedom = n-2 = 49 - 2 = 47
+P-value = 2*P(T>3.41) = 0.0013
+P-value is 0.0013 < $\alpha$. Therefore, with this evidence, we reject $H_0$.
+
+**Part F**
+
+```{r, out.width="60%", echo=FALSE}
+m1 <- lm(IBI~Area)
+Residuals <- resid(m1)
+plot(Area, Residuals,main="Area and Residuals Scatterplot")
+```
+
+As area increases, the residual approaches 0 and decreases.
+
+**Part G**
+
+```{r, out.width="49%", echo=FALSE}
+m1 <- lm(IBI~Area)
+Residuals <- resid(m1)
+qqnorm(Residuals)
+hist(Residuals)
+```
+
+The residuals are skewed left and have a normal distribution.
+
+**Part H**
+
+Looking at the graphs and residuals, the assumptions are reasonable. 
+
+**Question 10.33**
+
+**Part A**
+
+```{r, out.width="49%", echo=FALSE}
+IBI <- c(47,61,39,59,72,76,85,89,74,89,33,46,32,80,80,78,53,43,88,84,62,55,29,29,54,78,71,55,58,71,33,59,81,71,75,64,41,82,60,84,83,82,82,86,79,67,56,85,91)
+
+Forest <- c(0,0,0,0,0,0,3,3,7,8,9,10,10,11,14,17,17,18,21,22,25,31,32,33,33,33,39,41,43,43,47,49,49,52,52,59,63,68,75,79,79,80,86,89,90,95,95,100,100)
+```
+
+```{r, out.width="60%", echo=FALSE}
+summary(IBI)
+hist(IBI)
+boxplot(IBI, title="Box Plot: IBI")
+```
+
+IBI data has a strong skew to the left. No outliers via the box plot.
+ 
+```{r, out.width="60%", echo=FALSE}
+summary(Forest)
+hist(Forest)
+boxplot(Forest, title="Box Plot: Forest")
+```
+
+Forest data has a strong skew to the right. No outliers via the box plot.
+
+**Part B**
+
+```{r, out.width="60%", echo=FALSE}
+plot(Forest,IBI)
+```
+
+IBI varies more when Forest is lowered. There is no strong association between Forest and IBI and there are no outliers. 
+
+**Part C**
+
+$IBI_i=\beta _0+\beta _1\cdot \:Forest_i+\epsilon _i$ for $i = 1,2,3,...,49
+
+$IBI = 59.91+0.153*Forest+\epsilon$
+
+**Part D**
+
+
+Null Hypothesis: $\beta_1 = 0$
+
+Alternative Hypothesis: $\beta \ne 0$
+
+**Part E**
+
+$\alpha = 0.05$
+
+$$T=\frac{\hat{\beta _1\:}}{SE_{\hat{\beta \:_1\:}}}=\frac{0.153}{0.08}=1.9$$
+$$SE_{\hat{\beta _1\:\:}}=\sqrt{\frac{S^2}{\sum_{i=1}^n\left(x_i-x\bar{\:}\right)^2\:}}=\sqrt{\frac{316.4}{49781.6}}=0.08$$
+$$S^2=\frac{\sum _{i=1}^n\:\left(y_i-\hat{y_i}\right)^2}{n-2}=316.4$$
+
+Degrees of Freedom: n-2 = 47
+
+P-value: P = 2*P(T>1.91) = 0.06
+
+P = 0.06 which is greater than $\alpha$. There is no significant evidence that there is a linear relationship between IBI and Forest. Hence, we fail to reject the null hypothesis.
+
+**Part F**
+
+```{r, out.width="60%", echo=FALSE}
+
+m2 <- lm(IBI~Forest)
+Residuals2 <- resid(m2)
+plot(Forest, Residuals2)
+```
+
+The residuals plot don't have patterns.
+
+**Part G**
+
+```{r, out.width="49%", echo=FALSE}
+m2 <- lm(IBI~Forest)
+Residuals2 <- resid(m2)
+qqnorm(Residuals2)
+hist(Residuals2)
+```
+
+The residuals are strongly skewed to the left and they are not normal.
+
+**Part H**
+
+The assumptions are not reasonable based on the graphs. The residuals are not normally distributed.
+
+**Question 10.34**
+
+The first analysis of Area and IBI shows significant evidence of a linear relationship. The residuals are normally distributed.
+
+The second analysis of Forest and IBI shows no significant evidence of a linear relationship. The residuals are strongly skewed to the left and they are not normal.
+
+Given the choice, I believe that the first analysis is a better choice because regression seems to have worked better. The second analysis did not have normal distribution and lacked a linear relationship so is not a good choice.
+
+**Question 10.35**
+
+```{r, out.width="49%", echo=FALSE}
+IBI <- c(0,61,39,59,72,76,85,89,74,89,33,46,32,80,80,78,53,43,88,84,62,55,29,29,54,78,71,55,58,71,33,59,81,71,75,64,41,82,60,84,83,82,82,86,79,67,56,85,91)
+plot(Forest,IBI,main="0% Forest Observation")
+
+IBI <- c(47,61,39,59,72,76,85,89,74,89,33,46,32,80,80,78,53,43,88,84,62,55,29,29,54,78,71,55,58,71,33,59,81,71,75,64,41,82,60,84,83,82,82,86,79,67,56,85,0)
+
+plot(Forest,IBI,main="100% Forest Observation")
+```
+
+At 0% Forest Observation: IBI and Forest's relationship becomes positively associated because the P-value decreases.
+
+At 100% Forest Observation: IBI and Forest's relationship becomes negatively associated because the P-value increases.
+
+Summary: We were able to learn of the observation level impacts or correlates to the association and p-value.
+
+**Question 10.36**
+
+**Part A**
+$$β0\:+\:ˆβ1x\:\pm \left(n\:−\:2\right)\:⋅\:S\:=\:52.92\:+\:0.46\:⋅\:40\:\pm \:5.72$$
+$$SE_{\hat{\mu Y}}=\sqrt{\left(\frac{1}{n}+\frac{\left(x^{\cdot }-\hat{x}\right)^2}{\sum _{i=1}^n\left(x_{i-\hat{x}}\right)^2}\right)S^2}=2.8$$
+
+$$S^2=\sum _{i=1}^n\frac{\left(y_i-\hat{y_1}\right)^2}{n-2}=273.4$$
+95% Confidence Interval: $71.33\:\pm \:5.72\:=\:\left(65.61,\:77.04\right)$
+
+**Part B**
+
+$$β0\:+\:ˆβ1x\:\pm \:\left(n\:−\:2\right)\:⋅\:SE_Y\:=\:52.92\:+\:0.46\:⋅\:40\:\pm \:33.75∗\:t1−α2EYˆ∗$$
+$$SE_{\hat{\ Y}}=\sqrt{\left(1+ \frac{1}{n}+\frac{\left(x^{\cdot }-\hat{x}\right)^2}{\sum _{i=1}^n\left(x_{i-\hat{x}}\right)^2}\right)S^2}=16.8$$
+$$S^2=\sum _{i=1}^n\frac{\left(y_i-\hat{y_1}\right)^2}{n-2}=273.4$$
+
+95% Prediction Interval: $71.33\:\pm \:33.75\:=\:\left(37.58,\:105.08\right)$
+
+**Part C**
+
+Using the confidence interval, we can say that we can be 95% certain that the mean of the area of $40 km^2$ is between 65.61 and 77.04.
+
+Using the prediction interval, we can say that we can be 95% certain that the mean of the next new observation is between 37.58 and 105.08.
+
+
+**Part D**
+
+I believe this can be applied to other streams in Arkansas because the area's setting overall is probably very similar. However, other states and locations are less likely to be similar because of how their settings might be different.
+
+**Question 10.37**
+
+Area: IBI = 52.92 + (0.46 * Area) = 57.5
+Forest: IBI = 59.91 + (0.153 * Forest) = 69.5
+
+The prediction interval is broad which has resulted in the forest estimate being greater than the area estimate. This can cause overall uncertainty with the results. 
+
