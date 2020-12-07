@@ -23,23 +23,19 @@ public class Anagrams {
 				
 	// a hash table that will associate each letter in the alphabet with a prime
 	// number
-	Map<Character,Integer> letterTable; //{ letter: prime }
+	Map<Character,Integer> letterTable = new HashMap<Character, Integer>(); //{ letter: prime }
 	Map<Long,ArrayList<String>> anagramTable; //{ hashCode : [Anagrams: string] }
 
 	/**
 	 * This method should be invoked by the constructor for the class Anagrams and
 	 * should build the hash table letterTable
 	 */
-	private void buildLetterTable() {
-
-		System.out.println(letters.length);
-		for (int i = 0; i < letters.length; i++) {
-			System.out.println(letters[i] + ", " + primes[i]);
-			
+	private void buildLetterTable() {		
+		for (int i = 0; i < letters.length; i++) {			
 			Character letter = letters[i];
 			Integer prime = primes[i];
+
 			letterTable.put(letter, prime);
-			
 		}
 	}
 
@@ -73,6 +69,7 @@ public class Anagrams {
 	 * unique factorization theorem
 	 * 
 	 * @param s
+	 * @throws IllegalArgumentException if the string s is empty.
 	 * @return the hash code for the given string s
 	 */
 	private long myHashCode(String s) {
@@ -82,14 +79,13 @@ public class Anagrams {
 
 		long hashCode = 1;
 
+		//iterate through char in s and create hashCode using letterTable
 		for (int i = 0; i < s.length(); i++) {
 			char letter = s.charAt(i);
-
 			hashCode = hashCode * letterTable.get(letter);
 		}
 		
 		return hashCode;
-
 	}
 	
 	/**
@@ -114,21 +110,27 @@ public class Anagrams {
 	 * @return a list of them since there ay be more than one list of anagrams with
 	 *         a maximal size
 	 */
-	private ArrayList<Map.Entry<Long,ArrayList<String>>> getMaxEntries() {
-	    ArrayList<Map.Entry<Long, ArrayList<String>>> temp = new ArrayList<Map.Entry<Long, ArrayList<String>>>();
-			int max = 0;
-			for (Map.Entry<Long, ArrayList<String>> entry : anagramTable.entrySet()) {
-				if (entry.getValue().size() > max) {
-					temp.clear();
-					temp.add(entry);
-					max = entry.getValue().size();
-				} else {
-					if (entry.getValue().size() == max) {
-						temp.add(entry);
+	protected ArrayList<Map.Entry<Long,ArrayList<String>>> getMaxEntries() {
+			ArrayList<Map.Entry<Long, ArrayList<String>>> maxEntry = new ArrayList<Map.Entry<Long, ArrayList<String>>>();
+			int largestEntry = Integer.MIN_VALUE; // track the largest sets of anagrams
+
+			for (Map.Entry<Long, ArrayList<String>> anagram : anagramTable.entrySet()) {
+				int sizeAnagram = anagram.getValue().size();
+
+				//if larger set of anagram is found, reset maxEntry
+				if (sizeAnagram > largestEntry) {
+					maxEntry.clear();
+					maxEntry.add(anagram);
+					largestEntry = sizeAnagram;
+				} else { //is set of anagram with same size, add the set
+					if (sizeAnagram == largestEntry) {
+						maxEntry.add(anagram);
 					}
 				}
 			}
-			return temp;
+
+			return maxEntry;
+
 	}
 	
 	public static void main(String[] args) {
@@ -136,14 +138,17 @@ public class Anagrams {
 
 		final long startTime = System.nanoTime();    
 		try {
-			a.processFile("words_alpha.txt");
+			a.processFile("/Users/minglin/Stevens-IT/CS_284/homeworks/hw_6/words_alpha.txt");
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
 		ArrayList<Map.Entry<Long,ArrayList<String>>> maxEntries = a.getMaxEntries();
 		final long estimatedTime = System.nanoTime() - startTime;
-		final double seconds = ((double) estimatedTime/1000000000);
+		final double seconds = ((double) estimatedTime / 1000000000);
+		
 		System.out.println("Time: "+ seconds);
-		System.out.println("List of max anagrams: "+ maxEntries);
+		System.out.println("List of max anagrams: " + maxEntries); //  [236204078=[ alerts , alters , artels , estral , laster , lastre , rastle , ratels , relast , resalt , salter , slater , staler , stelar , talers ]]
+		System.out.println("HashCode: " + maxEntries.get(0).getKey()); //236204078
+		System.out.println("Size: " + maxEntries.get(0).getValue().size()); //15
 	}
 }

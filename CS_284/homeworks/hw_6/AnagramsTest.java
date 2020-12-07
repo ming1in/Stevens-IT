@@ -13,16 +13,16 @@ class AnagramsTest {
   @Test
   void test1() {
     Anagrams a = new Anagrams();
+    
     try {
-      a.processFile("words_alpha.txt");
+      a.processFile("/Users/minglin/Stevens-IT/CS_284/homeworks/hw_6/words_alpha.txt");
     } catch (IOException e1) {
       e1.printStackTrace();
     }
+
     ArrayList<Map.Entry<Long, ArrayList<String>>> maxEntries = a.getMaxEntries();
-    int length = maxEntries.get(0).getValue().size();
-    long key = maxEntries.get(0).getKey();
-    assertEquals(key, 236204078);
-    assertEquals(length, 15);
+    assertEquals(maxEntries.get(0).getKey(), 236204078);
+    assertEquals(maxEntries.get(0).getValue().size(), 15);
   }
 
 }
