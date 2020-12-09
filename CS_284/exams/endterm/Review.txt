@@ -1,0 +1,23 @@
+Material to Cover
+  - Stacks & Queues
+  - Recursion
+  - Binary Tree
+    - Binary Search Tree: add, remove, find
+    - Heaps
+      - Min Heap, Max Heap
+      - Add, remove
+      - Array implementation
+  - Hash Tables
+    - Collision Resolution: open addressing (linear probing) and chaining
+  - Sorting 
+    - Insertion Sort
+    - Selection Sort
+    - Bubble Sort
+    - Quick Sort
+
+- Pencil and Paper
+
+Did not see:
+  - Heap Sort
+  - Merge Sort
+  - AVL trees
