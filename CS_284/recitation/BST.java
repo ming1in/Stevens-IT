@@ -1,6 +1,6 @@
 package recitation;
 
-import lectures.trees.BTree.Node;
+import recitation.BTree.Node;
 
 public class BST<E extends Comparable<E>> extends BTree<E> {
 

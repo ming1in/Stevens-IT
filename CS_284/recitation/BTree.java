@@ -4,9 +4,9 @@ public class BTree<E> {
 
   public static class Node<F> {
     // Data fields
-    private F data;
-    private Node<F> left;
-    private Node<F> right;
+    F data;
+    Node<F> left;
+    Node<F> right;
 
     // Constructors
     public Node(F data, Node<F> left, Node<F> right) {
@@ -28,8 +28,8 @@ public class BTree<E> {
   }
 
   // Data fields
-  private Node<E> root;
-  private int size;
+  protected Node<E> root;
+  protected int size;
 
   // Constructors
   BTree() {
