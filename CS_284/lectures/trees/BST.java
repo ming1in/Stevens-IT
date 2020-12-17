@@ -84,42 +84,42 @@ public class BST<E extends Comparable<E>> extends BTree<E> {
     this.root = removeUtil(item, this.root);
   }
   
-  // private Node<E> removeUtil(E item, Node<E> currentNode) {
-  //   if (currentNode == null) {
-  //     throw new IllegalArgumentException("remove: item does not exist in BST");
-  //   }
+  private Node<E> removeUtil(E item, Node<E> currentNode) {
+    if (currentNode == null) {
+      throw new IllegalArgumentException("remove: item does not exist in BST");
+    }
 
-  //   int compare = item.compareTo(currentNode.data);
+    int compare = item.compareTo(currentNode.data);
 
-  //   if(compare<0){
-  //     currentNode.left = removeUtil(item, currentNode.left);
-  //     return currentNode.left;
-  //   } else if (compare > 0){
-  //     currentNode.right = removeUtil(item, currentNode.right);
-  //     return currentNode.right;
-  //   }
+    if(compare<0){
+      currentNode.left = removeUtil(item, currentNode.left);
+      return currentNode.left;
+    } else if (compare > 0){
+      currentNode.right = removeUtil(item, currentNode.right);
+      return currentNode.right;
+    }
 
-  //   //in the event that item is found (compare = 1)
+    //in the event that item is found (compare = 1)
 
-  //   if(currentNode.left == null && currentNode.right == null ){//if item is a leaf, simply remove it
-  //     return null;
-  //   }
-  //   if( currentNode.left == null ){ // if node w/ item has only right child, replace node with right child
-  //     return currentNode.right;
-  //   }
-  //   if(currentNode.right == null){ // if node w/ item has only left child, replace node with left child
-  //     return currentNode.left;
-  //   }
+    if(currentNode.left == null && currentNode.right == null ){//if item is a leaf, simply remove it
+      return null;
+    }
+    if( currentNode.left == null ){ // if node w/ item has only right child, replace node with right child
+      return currentNode.right;
+    }
+    if(currentNode.right == null){ // if node w/ item has only left child, replace node with left child
+      return currentNode.left;
+    }
 
-  //   // if node w/ item has two children
-  //   if (currentNode.left.right == null) {
-  //     currentNode.left.right = currentNode.right;
-  //     return currentNode.left;
-  //   }
+    // if node w/ item has two children
+    if (currentNode.left.right == null) {
+      currentNode.left.right = currentNode.right;
+      return currentNode.left;
+    }
     
-  //   //TODO: edge case where node w/ item has two children
+    //TODO: edge case where node w/ item has two children
 
-  // }
+  }
   
   public static void main(String[] args) {
     BST<Integer> t1 = new BST<>(4);
